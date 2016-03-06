@@ -29,5 +29,5 @@ npm test
 
 ## TODOS:
 - finish writing test for share-count object
-- allow share-count object to pass in a Promise library
-- support promises
+- integrate with travis-ci
+- add project to npm
