@@ -2,7 +2,7 @@
   "name": "node-share-count",
   "version": "1.0.0",
   "description": "Get share counts for a url from various social services",
-  "main": "share-count.js",
+  "main": "index.js",
   "scripts": {
     "test": "./node_modules/.bin/mocha --reporter spec"
   },

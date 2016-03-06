@@ -28,6 +28,5 @@ npm test
 ```
 
 ## TODOS:
-- finish writing test for share-count object
 - integrate with travis-ci
 - add project to npm

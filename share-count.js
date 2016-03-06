@@ -1,24 +1,27 @@
-var services = require('./services');
-var request = require('request');
+function ShareCount(request, services) {
+  this.request = request;
+  this.services = services;
+}
 
-module.exports = {
+ShareCount.prototype = {
   get: function(serviceName, url, cb) {
-    var service = services[serviceName];
-    var postBody;
+    var service = this.services[serviceName];
+    var options;
 
     if (!service) {
       return cb(new Error('Unable to find service with name ' + serviceName));
     }
 
+    options = {
+      url: service.buildEndpoint(url),
+      method: service.method
+    };
+
     if (service.method === 'POST') {
-      postBody = service.buildPostBody(url);
+      options.body = JSON.stringify(service.buildPostBody(url));
     }
 
-    request({
-      url: service.buildEndpoint(url),
-      method: service.method,
-      body: JSON.stringify(postBody)
-    }, function(err, response, body) {
+    this.request(options, function(err, response, body) {
       var counts;
 
       if (err) {
@@ -33,3 +36,5 @@ module.exports = {
     });
   }
 };
+
+module.exports = ShareCount;
