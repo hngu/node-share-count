@@ -28,5 +28,4 @@ npm test
 ```
 
 ## TODOS:
-- integrate with travis-ci
 - add project to npm
