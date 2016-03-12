@@ -1,5 +1,7 @@
 # Node Share Count
 
+[![Travis](https://img.shields.io/travis/hngu/node-share-count.svg)]()
+
 ## Get Share Counts
 
 Node Share Count is a utility to get share counts for the following supported services:
