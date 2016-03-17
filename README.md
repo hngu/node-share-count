@@ -31,3 +31,4 @@ npm test
 
 ## TODOS:
 - add project to npm
+- add code documentation for users?
